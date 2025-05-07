@@ -1,0 +1,114 @@
+/* Base container */
+.group {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 120%; /* Extra to allow bounce */
+  background: #000;
+  transform: translateY(100%);
+  transform-origin: bottom;
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  z-index: 10;
+  transition: border-radius 0.3s ease;
+}
+
+/* On hover: top bounce only */
+.group:hover .overlay {
+  animation: bounceAtTop 0.55s forwards ease-out;
+}
+
+/* On hover-out: go down, restore semicircle */
+.group:not(:hover) .overlay {
+  animation: slideDownWithBounce 0.45s forwards ease-out;
+}
+
+/* Top bounce AFTER full cover with fixed semicircular shape */
+@keyframes bounceAtTop {
+  0%   { 
+    transform: translateY(100%); 
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+  }
+  40%  { 
+    transform: translateY(0%); 
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+  }
+  50%  { 
+    transform: translateY(30%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  65%  { 
+    transform: translateY(20%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  75%  { 
+    transform: translateY(10%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  85%  { 
+    transform: translateY(0%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  90%  { 
+    transform: translateY(7%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  95% {
+    transform: translateY(5%);
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  100% {
+    transform: translateY(0%);
+    border-top-left-radius: 0px; /* Maintain semicircle */
+    border-top-right-radius: 0px;
+  }
+}
+
+/* On mouse leave: bounce down and restore semicircle */
+@keyframes slideDownWithBounce {
+  0%   { 
+    transform: translateY(0%); 
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+  }
+  30%  { 
+    transform: translateY(100%); 
+    border-top-left-radius: 150px;
+    border-top-right-radius: 150px;
+  }
+  50%  { 
+    transform: translateY(90%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  70%  { 
+    transform: translateY(100%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  85%  { 
+    transform: translateY(97%); 
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+  100% {
+    transform: translateY(100%);
+    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-right-radius: 150px;
+  }
+}

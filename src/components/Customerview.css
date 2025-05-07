@@ -1,0 +1,93 @@
+/* Customerview.css */
+
+/* ──────────────────────────────────────────────────────────
+   1) Container setup
+────────────────────────────────────────────────────────── */
+.group {
+  position: relative;
+  overflow: hidden;
+}
+
+/* ──────────────────────────────────────────────────────────
+   2) Animated‑bg div + darker overlay
+────────────────────────────────────────────────────────── */
+.group .animated-bg {
+  position: absolute;
+  inset: 0;                             /* top:0; right:0; bottom:0; left:0 */
+  
+  /* scale the bg so it overflows slightly and never shows edges */
+  background-size: 120% auto !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  
+  /* start off‑screen below & invisible */
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 0;
+}
+
+/* overlay to darken the image */
+.group .animated-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);  /* deeper dark */
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ──────────────────────────────────────────────────────────
+   3) Hover‑in & Hover‑out animations
+────────────────────────────────────────────────────────── */
+.group:hover .animated-bg {
+  animation: slideUpBounceDark 1s forwards ease-out;
+  opacity: 1;
+}
+
+.group:not(:hover) .animated-bg {
+  animation: slideDownBounceDark 1s forwards ease-out;
+  /* no explicit opacity here—keyframes handle fade */
+}
+
+/* ──────────────────────────────────────────────────────────
+   4) Text‑color transition
+────────────────────────────────────────────────────────── */
+.group .text-content {
+  transition: color 0.5s ease-in-out;
+}
+
+.group:hover .text-content {
+  color: #ffffff;
+}
+
+.group:not(:hover) .text-content {
+  color: #000000;
+}
+
+/* ──────────────────────────────────────────────────────────
+   5) Keyframes: Slide Up + 3‑bounce + fade in
+────────────────────────────────────────────────────────── */
+@keyframes slideUpBounceDark {
+  0%   { transform: translateY(100%); opacity: 0; }
+  10%  { opacity: 1; }                   /* fade in early */
+  30%  { transform: translateY(-25%); }  /* big overshoot */
+  45%  { transform: translateY(0); }     /* settle */
+  60%  { transform: translateY(-12%); }  /* first bounce */
+  75%  { transform: translateY(0); }
+  90%  { transform: translateY(-6%); }   /* second bounce */
+  100% { transform: translateY(0); }     /* final rest */
+}
+
+/* ──────────────────────────────────────────────────────────
+   6) Keyframes: Slide Down + 3‑bounce + fade out
+────────────────────────────────────────────────────────── */
+@keyframes slideDownBounceDark {
+  0%   { transform: translateY(0);      opacity: 1; }
+  30%  { transform: translateY(100%);   opacity: 1; }  /* drop fully down */
+  45%  { transform: translateY(90%);    opacity: 1; }  /* bounce up: 10% peek */
+  60%  { transform: translateY(100%);   }              /* settle */
+  75%  { transform: translateY(95%);    }              /* bounce: 5% peek */
+  88%  { transform: translateY(100%);   }              /* settle */
+  95%  { transform: translateY(98%);    }              /* tiny bounce: 2% peek */
+  100% { transform: translateY(100%);   opacity: 0; }  /* hide at end */
+}
