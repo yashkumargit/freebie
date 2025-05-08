@@ -83,28 +83,30 @@ const Hero = () => {
   }, [index, isDeleting]);
 
   return (
-    <div className='flex flex-col items-center justify-center mt-20 gap-10'>
-      <p className='font-bold text-2xl text-[#F9B800]'>RISUS PRAESENT VULPUTATE. </p>
-      <h1 className='font-bold text-7xl whitespace-nowrap'>
+    <div className='flex flex-col items-center justify-center mt-20 gap-10 px-4'>
+      <p className='font-bold text-xl sm:text-2xl text-[#F9B800] text-center'>
+        RISUS PRAESENT VULPUTATE.
+      </p>
+
+      <h1 className='font-bold text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-center break-words whitespace-normal'>
         {staticText}
         <span className='text-black'>{displayed}</span>
-        <span className="text-black animate-pulse">|</span>
+        <span className='text-black animate-pulse'>|</span>
       </h1>
 
-      <div className='flex gap-5 mb-[-20px] flex-wrap justify-center'>
+      <div className='flex gap-5 flex-wrap justify-center mb-[-20px] px-2'>
         <Keypoints props={"cursus integer"} />
         <Keypoints props={"Integer Consequat"} />
         <Keypoints props={"Tellus Euismod Pellentesque"} />
         <Keypoints props={"Aliquot Tritique"} />
       </div>
 
-      <div className='flex gap-5 flex-wrap justify-center'>
+      <div className='flex gap-5 flex-wrap justify-center px-2'>
         <Keypoints props={"Pellentesque Tempus"} />
         <Keypoints props={"Mauris Fermentum Praesent"} />
       </div>
 
       <Commonbtn props="bg-[#F9B800] text-black" shadow="dark" />
-      
     </div>
   );
 };

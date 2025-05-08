@@ -44,42 +44,41 @@
   }
   50%  { 
     transform: translateY(30%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
   65%  { 
     transform: translateY(20%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
   75%  { 
     transform: translateY(10%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px;
     border-top-right-radius: 150px;
   }
   85%  { 
     transform: translateY(0%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
   90%  { 
     transform: translateY(7%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px;
     border-top-right-radius: 150px;
   }
   95% {
     transform: translateY(5%);
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
   100% {
     transform: translateY(0%);
-    border-top-left-radius: 0px; /* Maintain semicircle */
+    border-top-left-radius: 0px; 
     border-top-right-radius: 0px;
   }
 }
 
-/* On mouse leave: bounce down and restore semicircle */
 @keyframes slideDownWithBounce {
   0%   { 
     transform: translateY(0%); 
@@ -93,22 +92,22 @@
   }
   50%  { 
     transform: translateY(90%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
   70%  { 
     transform: translateY(100%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
   85%  { 
     transform: translateY(97%); 
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
   100% {
     transform: translateY(100%);
-    border-top-left-radius: 150px; /* Maintain semicircle */
+    border-top-left-radius: 150px; 
     border-top-right-radius: 150px;
   }
 }

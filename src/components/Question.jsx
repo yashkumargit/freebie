@@ -21,7 +21,7 @@ const faqData = [
   },
   {
     que: 'Sollicitudin ornare tempus felis nulla varius pulvinar nibh viverra ornare.',
-    ans: '',
+    ans: 'Euismod magna id purus eget nunc ligula suspendisse dui netus. Condimentum blandit rutrum at mauris enim pulvinar duis etiam duis. Mauris fermentum praesent tellus euismod.',
   },
   {
     que: 'Consectetur nibh velit magna consectetur leo.',
