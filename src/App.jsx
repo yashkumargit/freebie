@@ -5,7 +5,7 @@ import Navbar from './components/Navbar';
 import MainComponent from './components/MainComponent';
 import CardComponent from './components/CardComponent';
 import Footer from './components/Footer';
-import Maincomponent2 from './components/Maincomponent2';
+import Maincomponent2 from './components/MainComponent2';
 import Question from './components/Question';
 import Customerview from './components/Customerview';
 import Leaf from './assets/leaf.svg';

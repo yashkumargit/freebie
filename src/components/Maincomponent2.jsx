@@ -1,5 +1,5 @@
 import React from 'react';
-import Illustration from '../assets/MainComponent2.png';
+import Illustration from '../assets/maincomponent2.png';
 import Commonbtn from './Commonbtn';
 import Keypoints from './Keypoints';
 
